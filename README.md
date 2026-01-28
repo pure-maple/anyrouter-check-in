@@ -51,7 +51,7 @@
    - Name: `ANYROUTER_ACCOUNTS`
    - Value: 你的多账号配置数据（包含 cookies，建议改用 Environment secrets）
 
-> 说明：工作流会优先读取 Environment variables，未设置时再读取同名的 Environment secrets。
+> 说明：工作流会优先读取 Environment secrets，未设置时再读取同名的 Environment variables。
 
 ### 4. 多账号配置格式
 
@@ -319,8 +319,8 @@
 
 1. 在仓库的 Settings -> Environments -> production -> Environment variables 中添加上述环境变量（敏感信息建议使用 Environment secrets）
 2. 如使用 Environment secrets，名称需与上述环境变量一致，工作流会自动读取
-2. 每个通知方式都是独立的，可以只配置你需要的推送方式
-3. 如果某个通知方式配置不正确或未配置，脚本会自动跳过该通知方式
+3. 每个通知方式都是独立的，可以只配置你需要的推送方式
+4. 如果某个通知方式配置不正确或未配置，脚本会自动跳过该通知方式
 
 ## 故障排除
 
