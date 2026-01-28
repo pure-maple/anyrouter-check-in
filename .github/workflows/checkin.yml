@@ -71,23 +71,23 @@ jobs:
 
     - name: 执行签到
       env:
-        ANYROUTER_ACCOUNTS: ${{ secrets.ANYROUTER_ACCOUNTS }}
-        PROVIDERS: ${{ secrets.PROVIDERS }}
-        DINGDING_WEBHOOK: ${{ secrets.DINGDING_WEBHOOK }}
-        EMAIL_USER: ${{ secrets.EMAIL_USER }}
-        EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
-        EMAIL_TO: ${{ secrets.EMAIL_TO }}
-        EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
-        CUSTOM_SMTP_SERVER: ${{ secrets.CUSTOM_SMTP_SERVER }}
-        PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
-        SERVERPUSHKEY: ${{ secrets.SERVERPUSHKEY }}
-        FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
-        WEIXIN_WEBHOOK: ${{ secrets.WEIXIN_WEBHOOK }}
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        GOTIFY_URL: ${{ secrets.GOTIFY_URL }}
-        GOTIFY_TOKEN: ${{ secrets.GOTIFY_TOKEN }}
-        GOTIFY_PRIORITY: ${{ secrets.GOTIFY_PRIORITY }}
+        ANYROUTER_ACCOUNTS: ${{ secrets.ANYROUTER_ACCOUNTS || vars.ANYROUTER_ACCOUNTS }}
+        PROVIDERS: ${{ secrets.PROVIDERS || vars.PROVIDERS }}
+        DINGDING_WEBHOOK: ${{ secrets.DINGDING_WEBHOOK || vars.DINGDING_WEBHOOK }}
+        EMAIL_USER: ${{ secrets.EMAIL_USER || vars.EMAIL_USER }}
+        EMAIL_PASS: ${{ secrets.EMAIL_PASS || vars.EMAIL_PASS }}
+        EMAIL_TO: ${{ secrets.EMAIL_TO || vars.EMAIL_TO }}
+        EMAIL_SENDER: ${{ secrets.EMAIL_SENDER || vars.EMAIL_SENDER }}
+        CUSTOM_SMTP_SERVER: ${{ secrets.CUSTOM_SMTP_SERVER || vars.CUSTOM_SMTP_SERVER }}
+        PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN || vars.PUSHPLUS_TOKEN }}
+        SERVERPUSHKEY: ${{ secrets.SERVERPUSHKEY || vars.SERVERPUSHKEY }}
+        FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK || vars.FEISHU_WEBHOOK }}
+        WEIXIN_WEBHOOK: ${{ secrets.WEIXIN_WEBHOOK || vars.WEIXIN_WEBHOOK }}
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || vars.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || vars.TELEGRAM_CHAT_ID }}
+        GOTIFY_URL: ${{ secrets.GOTIFY_URL || vars.GOTIFY_URL }}
+        GOTIFY_TOKEN: ${{ secrets.GOTIFY_TOKEN || vars.GOTIFY_TOKEN }}
+        GOTIFY_PRIORITY: ${{ secrets.GOTIFY_PRIORITY || vars.GOTIFY_PRIORITY }}
       run: |
         uv run checkin.py
 
