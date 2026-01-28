@@ -49,7 +49,9 @@
 4. 点击新建的 `production` 环境进入环境配置页
 5. 点击 "Add environment variable" 创建变量：
    - Name: `ANYROUTER_ACCOUNTS`
-   - Value: 你的多账号配置数据
+   - Value: 你的多账号配置数据（包含 cookies，建议改用 Environment secrets）
+
+> 说明：工作流会优先读取 Environment variables，未设置时再读取同名的 Environment secrets。
 
 ### 4. 多账号配置格式
 
@@ -222,7 +224,7 @@
 1. 进入你的仓库 Settings -> Environments -> production
 2. 添加新的 environment variable：
    - Name: `PROVIDERS`
-   - Value: 你的 provider 配置（JSON 格式）
+   - Value: 你的 provider 配置（JSON 格式，包含敏感信息时建议使用 Environment secrets）
 
 **字段说明**：
 
@@ -315,7 +317,8 @@
 
 配置步骤：
 
-1. 在仓库的 Settings -> Environments -> production -> Environment variables 中添加上述环境变量
+1. 在仓库的 Settings -> Environments -> production -> Environment variables 中添加上述环境变量（敏感信息建议使用 Environment secrets）
+2. 如使用 Environment secrets，名称需与上述环境变量一致，工作流会自动读取
 2. 每个通知方式都是独立的，可以只配置你需要的推送方式
 3. 如果某个通知方式配置不正确或未配置，脚本会自动跳过该通知方式
 
