@@ -4,6 +4,7 @@
 __pycache__
 .pytest_cache
 .ruff_cache
+anyrouter_check_in.egg-info
 balance_hash.txt
 
 .DS_Store
